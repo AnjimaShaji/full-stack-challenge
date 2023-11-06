@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <nav class=" mt-1 navbar navbar-expand-lg bg-info navbar-dark danger-color rounded">
+      <!-- Brand -->
+      <img class="rounded-circle" src="/assets/Wise.png" alt="somthing" id="logobrand" [attr.width]="'50px'" [attr.height]="'50px'"><a class="navbar-brand "
+        id="logo"><B>JOBS</B></a>
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Dropdown -->
+        <li class="nav-item">
+          <a routerLink="/viewcompany" class="nav-link p-3" > <i class="fa fa-lock"></i>Company</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="" class="nav-link p-3" > <i class="fa fa-lock"></i>Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-3" style="cursor: pointer;" > <i class="fa fa-sign-in"></i> &nbsp;Logout</a>
+        </li>
+        <li class="nav-item">
+            <a  id="companyname" class="nav-link p-3" ><strong></strong></a>
+          </li>
+      </ul>
+    </nav>
+</div>
+<div class="container mt-5 bg-light">
+    <div class="row">
+        <div>
+            <div class="alert alert-success"><strong></strong></div>
+        </div>
+        
+        <div class="col-md-12">
+            <form #companyForm="ngForm" (ngSubmit)="createCompany()">              
+                <legend>Create Company</legend>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" id="name" name="name" class="form-control" [(ngModel)]="form.name" placeholder="Company Name">
+                </div>
+                <div class="alert alert-danger" [hidden]="!error.name">
+                    {{error.name}}
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" [(ngModel)]="form.email" placeholder="Company Email">
+                </div>
+                <div class="alert alert-danger" [hidden]="!error.email">
+                    {{error.email}}
+                </div>
+                <div class="mb-3">
+                  <label for="location" class="form-label">Location</label>
+                  <input type="location" id="location" name="location" class="form-control" [(ngModel)]="form.location" placeholder="Company Location">
+                </div>
+                <div class="alert alert-danger" [hidden]="!error.location">
+                    {{error.location}}
+                </div>
+                <div class="mb-3">
+                  <label for="Industry" class="form-label">Industry</label>
+                  <input type="industry" id="industry" name="industry" class="form-control" [(ngModel)]="form.industry" placeholder="Industry">
+                </div>
+                <div class="alert alert-danger" [hidden]="!error.industry">
+                    {{error.industry}}
+                </div>
+                <!-- <div class="mb-3">
+                  <label for="disabledSelect" class="form-label">Disabled select menu</label>
+                  <select id="disabledSelect" class="form-select">
+                    <option>Disabled select</option>
+                  </select>
+                </div> -->
+                <!-- <div class="mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                    <label class="form-check-label" for="disabledFieldsetCheck">
+                      Can't check this
+                    </label>
+                  </div>
+                </div> -->
+                <button type="submit" class="btn btn-primary" [disabled]="!companyForm.valid">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>

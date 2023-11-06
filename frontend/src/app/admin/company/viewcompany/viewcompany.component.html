@@ -1,0 +1,34 @@
+<app-navbar-dashboard *ngIf="showNavbar"></app-navbar-dashboard>
+
+<div class="container">
+  <a routerLink="/createcompany"><button type="button" class="btn btn-success" style="float: right;">Create</button></a>
+</div>
+
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Location</th>
+      <th>Industry</th>
+      <th>Number of Jobs</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let company of companies">
+      <td><span>{{company.name}}</span></td>
+      <td><span>{{company.email}}</span></td>
+      <td><span>{{company.location}}</span></td>
+      <td><span>{{company.industry}}</span></td>
+      <td><span>{{company.job_count}}</span></td>
+      <td>
+      <a [routerLink]="['/single-company-view/', company.id]"><span>View</span></a>  | 
+      <a [routerLink]="['/edit-company/', company.id]"><span>Edit</span></a> |  
+      <a [routerLink]="['/del-company/', company.id]"><span>Delete</span></a>  
+      </td> 
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+<app-navbar-dashboard *ngIf="showNavbar"></app-navbar-dashboard>
+<form class="row g-3 needs-validation">
+  <ng-container *ngFor="let company of companyInfo;">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Company name</label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="company.name" name="name">
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" required [(ngModel)]="company.email" name="email">
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="location" class="form-label">Location</label>
+    <input type="text" class="form-control" id="location" required [(ngModel)]="company.location" name="location">
+    <div class="invalid-feedback">
+      Please provide a valid Location.
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="industry" class="form-label">Industry</label>
+    <input type="text" class="form-control" id="industry" required [(ngModel)]="company.industry" name="industry">
+    <div class="invalid-feedback">
+      Please select a valid Location.
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit" (click)="editCompany(companyInfo)">Edit</button>
+  </div>
+  </ng-container>
+</form>
+
+

@@ -5,3 +5,9 @@
 .ng-valid:not(form){
 	border-left: 5px solid green;
 }
+
+.background-image {
+  background-image: url('../../../assets/background_image.jpg');
+  background-size: cover;
+  /* Other styles for your background image */
+}

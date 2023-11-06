@@ -11,6 +11,7 @@ import { CreatejobComponent } from './admin/job/createjob/createjob.component';
 import { ViewjobComponent } from './admin/job/viewjob/viewjob.component';
 import { ViewsinglejobComponent } from './admin/job/viewsinglejob/viewsinglejob.component';
 import { EditjobComponent } from './admin/job/editjob/editjob.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 	{
@@ -56,6 +57,10 @@ const routes: Routes = [
     {    
         path:'edit-job/:id',
         component:EditjobComponent
+    },
+    {    
+        path:'',
+        component:HomeComponent
     }
     
 ];

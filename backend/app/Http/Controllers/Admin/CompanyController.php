@@ -18,8 +18,7 @@ class CompanyController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:company',
             'location' => 'required',
-            'industry' => 'required',
-            'salary' => 'required'
+            'industry' => 'required'
         ]);
 
         $companyData = Company::create($request->all());

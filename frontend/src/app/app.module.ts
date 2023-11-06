@@ -20,6 +20,7 @@ import { ViewjobComponent } from './admin/job/viewjob/viewjob.component';
 import { ViewsinglejobComponent } from './admin/job/viewsinglejob/viewsinglejob.component';
 import { NavbarDashboardComponent } from './navbar-dashboard/navbar-dashboard.component';
 import { EditjobComponent } from './admin/job/editjob/editjob.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EditjobComponent } from './admin/job/editjob/editjob.component';
     ViewjobComponent,
     ViewsinglejobComponent,
     NavbarDashboardComponent,
-    EditjobComponent
+    EditjobComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

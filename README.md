@@ -47,6 +47,68 @@ Extra points if you host the application
 # ✨✨ Best of luck to you. ✨✨
 
 
+# WiseJobs
+
+## Description
+
+WiseJobs is a dynamic and user-friendly job board application designed to connect job seekers and employers efficiently. This platform allows administrators to Create companies and post job listings and users to search, filter, and View more details for each individual job. WiseJobs aims to simplify the job search process, providing a centralized hub for both job seekers and employers.
+
+# Getting Started
+
+## Prerequisites
+Before you begin, make sure you have the following installed on your system:
+
+1.Composer
+2.PHP
+3.MySQL
+4.Node.js and npm for JavaScript dependencies
+
+## Installing
+
+##Clone the repository:
+
+```git clone 'https://github.com/Wise-Publishing-Inc/full-stack-challenge.git```
+
+##Install PHP dependencies:
+
+```composer install```
+
+##Executing laravel project
+
+```php artisan serve```
+
+## Generate APP_KEY
+
+```php artisan key:generate```
+
+## Create Database tables by migration
+
+```php artisan migrate```
+
+## Create Authentication to the app 
+
+```php artisan make:auth```
+
+##Install JavaScript dependencies:
+
+```npm install```
+
+# Usage
+
+## Start the Laravel development server:
+
+```php artisan serve```
+
+##Frontend
+
+```ng serve```
+
+
+
+
+
+
+
 
 
 

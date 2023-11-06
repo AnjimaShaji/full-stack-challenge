@@ -1,0 +1,57 @@
+<app-navbar-dashboard *ngIf="showNavbar"></app-navbar-dashboard>
+<div class="container mt-5 bg-light">
+    <div class="row">
+        <div>
+            <div class="alert alert-success"><strong></strong></div>
+        </div>
+        
+        <div class="col-md-12">
+            <form class="row g-3 needs-validation"> 
+            	<ng-container *ngFor="let job of jobInfo;">            
+	                <legend>Edit Job</legend>
+	                <div class="col-md-6">
+	                  <label for="name" class="form-label">Job</label>
+	                  <input type="text" id="job" name="job" class="form-control" [(ngModel)]="job.job" placeholder="Job Name">
+	                </div>
+	                <!-- <div class="mb-3">
+	                  <label for="disabledSelect" class="form-label">Company</label>
+	                  <select #company (change)="onSelected(company.value)" id="company_id" class="form-select" name="company_id">
+	                    <option>Select Company</option>
+	                    <option *ngFor="let company of jobInfo" [value]="company.id">
+	                    {{ company.name }}
+	                    </option>
+	                  </select>
+	                </div> -->
+	                <div class="col-md-6">
+	                  <label for="role" class="form-label">Role</label>
+	                  <input type="text" id="role" name="role" class="form-control" [(ngModel)]="job.role" placeholder="Role">
+	                </div>
+	                <div class="col-md-6">
+	                  <label for="experience" class="form-label">Experience</label>
+	                  <input type="experience" id="experience" name="experience" class="form-control" [(ngModel)]="job.experience" placeholder="Experience">
+	                </div>
+	                <div class="col-md-6">
+	                  <label for="salary" class="form-label">salary</label>
+	                  <input type="salary" id="salary" name="salary" class="form-control" [(ngModel)]="job.salary" placeholder="salary">
+	                </div>
+	                <!-- <div class="mb-3">
+	                  <label for="disabledSelect" class="form-label">Type</label>
+	                  <select #type (change)="selectType(type.value)" id="type" name="type" class="form-select">
+	                    <option>Select Type</option>
+	                    <option value="Office">Office</option>
+	                    <option value="Hybrid">Hybrid</option>
+	                    <option value="Remote">Remote</option>
+	                  </select>
+	                </div> -->
+	                <div class="col-md-6">
+	                  <label for="description" class="form-label">Description</label>
+	                  <input type="description" id="description" name="description" class="form-control" [(ngModel)]="job.description" placeholder="Description">
+	                </div>
+	                
+	                <button type="submit" class="btn btn-primary" (click)="editJob(jobInfo)">Edit</button>
+            	</ng-container>
+
+            </form>
+        </div>
+    </div>
+</div>

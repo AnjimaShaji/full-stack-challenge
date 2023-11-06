@@ -1,0 +1,71 @@
+<app-navbar-dashboard *ngIf="showNavbar"></app-navbar-dashboard>
+
+<div class="container">
+  <a routerLink="/create-job"><button type="button" class="btn btn-success" style="float: right;">Create</button></a>
+</div>
+<br><br>
+<div>
+<form (submit)="filterJobs()">
+        <h5>Job Search</h5>
+        <label for="type">Position Type:</label>
+        <select name="type" id="type" [(ngModel)]="type">
+            <option value="">Select Type</option>
+            <option value="Remote">Remote</option>
+            <option value="Office">Office</option>
+            <option value="Hybrid">Hybrid</option>
+        </select>
+        
+          <label for="company">Company:</label>
+          <select name="company" id="company" [(ngModel)]="company">
+              <option value="">Select Company</option>
+              <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
+          </select>
+       
+          <label for="salary">Minimum Salary:</label>
+          <input type="number" name="salary" id="salary" [(ngModel)]="salary">
+
+          <label for="location">Location:</label>
+          <input type="text" name="location" id="location" [(ngModel)]="location">
+          <br><br>
+        <div class="left-align-div">
+        <button type="submit">Filter</button>
+        <button type="button" (click)="resetFilter()">Reset Filter</button>
+      </div>
+    </form>
+<div>
+<br><br>
+<div class="container">
+  <h3>Jobs</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Job</th>
+      <th>Role</th>
+      <th>Type</th>
+      <th>Company</th>
+      <th>Location</th>
+      <th>Experience</th>
+      <th>Salary</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let job of jobs">
+      <td><span>{{job.job}}</span></td>
+      <td><span>{{job.role}}</span></td>
+      <td><span>{{job.type}}</span></td>
+      <td><span>{{job.company}}</span></td>
+      <td><span>{{job.location}}</span></td>
+      <td><span>{{job.experience}}</span></td>
+      <td><span>{{job.salary}}</span></td>
+      <td><span>{{job.description}}</span></td>
+      <td>
+      <a [routerLink]="['/view-single-job/', job.id]"><span>View</span></a>  | 
+      <a [routerLink]="['/edit-job/', job.id]"><span>Edit</span></a> |  
+      <a [routerLink]="['/del-job/', job.id]"><span>Delete</span></a>  
+      </td> 
+    </tr>
+    </tbody>
+  </table>
+</div>

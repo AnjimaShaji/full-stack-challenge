@@ -1,0 +1,35 @@
+<app-navbar-dashboard *ngIf="showNavbar"></app-navbar-dashboard>
+
+<form class="row g-3 needs-validation">
+  <ng-container *ngFor="let job of jobInfo;">
+    <div class="col-md-6">
+      <label for="name" class="form-label">Job</label>
+      <input type="text" id="job" name="job" class="form-control" [(ngModel)]="job.job" placeholder="Job Name" disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="disabledSelect" class="form-label">Company</label>
+      <input type="text" id="company" name="company" class="form-control" [(ngModel)]="job.company" placeholder="Company" disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="role" class="form-label">Role</label>
+      <input type="text" id="role" name="role" class="form-control" [(ngModel)]="job.role" placeholder="Role" disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="experience" class="form-label">Experience</label>
+      <input type="text" id="experience" name="experience" class="form-control" [(ngModel)]="job.experience" placeholder="Experience" disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="salary" class="form-label">salary</label>
+      <input type="text" id="salary" name="salary" class="form-control" [(ngModel)]="job.salary" placeholder="salary" disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="disabledSelect" class="form-label">Type</label>
+      <input type="text" id="type" name="type" class="form-control" [(ngModel)]="job.type" placeholder="Type" disabled>
+    </div>
+    <div class="col-12">
+    <a [routerLink]="['/edit-job/', job.id]"><button class="btn btn-primary" type="submit">Edit</button></a>
+  </div>
+  </ng-container>
+</form>
+
+

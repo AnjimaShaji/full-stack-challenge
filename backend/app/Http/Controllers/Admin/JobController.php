@@ -34,6 +34,7 @@ class JobController extends Controller
 
     public function details($id)
     {
+        $id = (int)$id;
         $jobDetails = Job::select('job.id','job.company_id','company.name as company','job.job','job.role','job.experience','job.description','job.type','job.salary')
                         ->leftJoin('company', 'job.company_id', '=', 'company.id')
                         ->where('job.id', $id)
@@ -44,11 +45,9 @@ class JobController extends Controller
     public function edit(Request $request)
     {
         $update = [
-            'company_id' => $request['company_id'],
             'job' => $request['job'],
             'role' => $request['role'],
             'experience' => $request['experience'],
-            'location' => $request['location'],
             'description' => $request['description'],
         ];
         Job::where('id', $request['id'])->update($update);

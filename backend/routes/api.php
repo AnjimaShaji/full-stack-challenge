@@ -30,7 +30,7 @@ Route::get('company-details/{id}', 'Admin\CompanyController@details');
 
 Route::post('update-company', 'Admin\CompanyController@edit');
 
-Route::post('delete-company', 'Admin\CompanyController@delete');
+Route::get('delete-company/{id}', 'Admin\CompanyController@delete');
 
 Route::post('create-job', 'Admin\JobController@create');
 
@@ -40,7 +40,7 @@ Route::get('view-single-job/{id}', 'Admin\JobController@details');
 
 Route::post('update-job', 'Admin\JobController@edit');
 
-Route::post('delete-job', 'Admin\JobController@delete');
+Route::get('delete-job/{id}', 'Admin\JobController@delete');
 
 Route::get('search-job', 'Admin\JobController@search');
 

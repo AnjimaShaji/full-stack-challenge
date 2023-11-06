@@ -25,16 +25,17 @@ export class EditjobComponent {
 	@Input() name = '';
 	ngOnInit(): void {
 		this.activatedRoute.params.subscribe(params => {
-		  this.userid = params['id']
+		  this.userid = params['id'];
 		}); 
 		this.jobDetails();
 	}
 
 	jobDetails(){
-
+		console.log(this.userid);
+		console.log("PPPPPP");
 	  this.httpClient.get<any>(`http://127.0.0.1:8000/api/view-single-job/${this.userid}`).subscribe(
 	    response => {
-	      this.jobInfo = response.companyDetails as string[];
+	      this.jobInfo = response.jobDetails as string[];
 	      console.log(this.jobInfo);
 	    }
 	  );

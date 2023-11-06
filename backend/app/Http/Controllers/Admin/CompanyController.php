@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Company;
+use App\Job;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -37,7 +38,6 @@ class CompanyController extends Controller
 
 	public function details($id)
     {
-
         $companyDetails = Company::select('id','name','email','location','industry')
         				->where('id', $id)
                         ->get()->toArray();
@@ -59,6 +59,7 @@ class CompanyController extends Controller
 	public function delete($id)
     {
     	Company::where('id', $id)->update(['deleted_at'=> date('Y-m-d H:i:s')]);
+        Job::where('company_id', $id)->update(['deleted_at'=> date('Y-m-d H:i:s')]);
     	return response()->json(['message'=>'Company Deleted'],200);
     }
 }
